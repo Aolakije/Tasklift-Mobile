@@ -37,8 +37,8 @@ export default function DashboardScreen({ navigation }) {
             </View>
             <TouchableOpacity 
                 style={styles.profileButton}
-                onPress={() => navigation.logout()}>
-                <Ionicons name="log-out-outline" size={32} color={COLORS.white} />
+                onPress={() => navigation.navigate('profile')}>
+                <Ionicons name="person-circle-outline" size={40} color={COLORS.white} />
             </TouchableOpacity>
           </View>       
 
@@ -93,7 +93,8 @@ export default function DashboardScreen({ navigation }) {
           <View style={styles.section}>
             <Text style={styles.sectionTitle}>Quick Actions</Text>
             
-            <TouchableOpacity style={styles.actionButton}>
+            <TouchableOpacity style={styles.actionButton}
+                onPress={() => navigation.navigate('addtask')}>
               <LinearGradient
                 colors={GRADIENTS.button}
                 style={styles.actionGradient}
@@ -119,7 +120,6 @@ export default function DashboardScreen({ navigation }) {
               <Ionicons name="document-text-outline" size={24} color={COLORS.primaryPurple} />
               <Text style={styles.actionButtonTextDark}>My Notes</Text>
             </TouchableOpacity>
-            
 
             <TouchableOpacity 
                 style={styles.actionButton}
@@ -134,6 +134,14 @@ export default function DashboardScreen({ navigation }) {
                     <Ionicons name="sparkles" size={24} color={COLORS.white} />
                     <Text style={styles.actionButtonText}>AI Assistant</Text>
                 </LinearGradient>
+            </TouchableOpacity>
+
+            <TouchableOpacity 
+                    style={styles.actionButtonWhite}
+                    onPress={() => navigation.navigate('documents')}
+                    >
+                    <Ionicons name="folder-open-outline" size={24} color={COLORS.primaryPurple} />
+                    <Text style={styles.actionButtonTextDark}>Documents</Text>
             </TouchableOpacity>
           </View>
           

@@ -216,7 +216,7 @@ const styles = StyleSheet.create({
   logoBox: {
     width: 80,
     height: 80,
-    backgroundColor: COLORS.logoPurple,
+    backgroundColor: COLORS.primaryPurple,
     borderRadius: 20,
     justifyContent: 'center',
     alignItems: 'center',

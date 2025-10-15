@@ -101,7 +101,8 @@ export default function TasksScreen({ navigation }) {
             <Ionicons name="arrow-back" size={28} color={COLORS.white} />
           </TouchableOpacity>
           <Text style={styles.headerTitle}>My Tasks</Text>
-          <TouchableOpacity style={styles.addButton}>
+          <TouchableOpacity style={styles.addButton}
+            onPress={() => navigation.navigate('addtask')}>
             <Ionicons name="add-circle" size={28} color={COLORS.accentOrange} />
           </TouchableOpacity>
         </View>
@@ -212,7 +213,10 @@ export default function TasksScreen({ navigation }) {
         </ScrollView>
 
         {/* Floating Add Button */}
-        <TouchableOpacity style={styles.floatingButton}>
+        <TouchableOpacity 
+          style={styles.floatingButton}
+          onPress={() => navigation.navigate('addtask')}
+        >
           <LinearGradient
             colors={GRADIENTS.button}
             style={styles.floatingButtonGradient}
