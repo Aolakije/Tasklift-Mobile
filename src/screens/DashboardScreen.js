@@ -78,7 +78,9 @@ export default function DashboardScreen({ navigation }) {
             </TouchableOpacity>
 
             {/* Notes Card */}
-            <TouchableOpacity style={styles.statCard}>
+            <TouchableOpacity 
+                style={styles.statCard}
+                onPress={() => navigation.navigate('notes')}>
               <View style={[styles.iconBox, { backgroundColor: COLORS.warning }]}>
                 <Ionicons name="document-text" size={34} color={COLORS.white} />
               </View>
@@ -111,11 +113,30 @@ export default function DashboardScreen({ navigation }) {
                 <Text style={styles.actionButtonTextDark}>View All Projects</Text>
                 </TouchableOpacity>
 
-            <TouchableOpacity style={styles.actionButtonWhite}>
+            <TouchableOpacity 
+                style={styles.actionButtonWhite}
+                    onPress={() => navigation.navigate('notes')}>
               <Ionicons name="document-text-outline" size={24} color={COLORS.primaryPurple} />
               <Text style={styles.actionButtonTextDark}>My Notes</Text>
             </TouchableOpacity>
+            
+
+            <TouchableOpacity 
+                style={styles.actionButton}
+                onPress={() => navigation.navigate('aichat')}
+                >
+                <LinearGradient
+                    colors={['#9333ea', '#7e22ce']}
+                    style={styles.actionGradient}
+                    start={{ x: 0, y: 0 }}
+                    end={{ x: 1, y: 0 }}
+                >
+                    <Ionicons name="sparkles" size={24} color={COLORS.white} />
+                    <Text style={styles.actionButtonText}>AI Assistant</Text>
+                </LinearGradient>
+            </TouchableOpacity>
           </View>
+          
 
           {/* Recent Activity */}
           <View style={styles.section}>
@@ -171,7 +192,7 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
-    padding: SPACING.lg,
+    padding: SPACING.md,
     paddingTop: SPACING.xl,
   },
   greeting: {
@@ -182,23 +203,23 @@ const styles = StyleSheet.create({
     fontSize: FONTS.xlarge,
     fontWeight: 'bold',
     color: COLORS.white,
-    marginTop: 4,
+    marginTop: 7,
   },
   profileButton: {
     padding: 4,
   },
   statsContainer: {
     flexDirection: 'row',
-    paddingHorizontal: SPACING.lg,
+    paddingHorizontal: SPACING.md,
     gap: SPACING.md,
-    marginBottom: SPACING.md,
   },
   statCard: {
     flex: 1,
-    backgroundColor: 'rgba(255, 255, 255, 0.1)',
+    backgroundColor: 'rgba(164, 158, 158, 0.1)',
     borderRadius: 15,
-    padding: SPACING.lg,
+    padding: SPACING.sm,
     alignItems: 'center',
+    marginBottom: SPACING.md,
   },
   iconBox: {
     width: 50,
@@ -220,13 +241,14 @@ const styles = StyleSheet.create({
     marginTop: 4,
   },
   section: {
-    padding: SPACING.lg,
+    padding: SPACING.sm,
   },
   sectionTitle: {
-    fontSize: FONTS.large,
+    fontSize: FONTS.xlarge,
     fontWeight: 'bold',
     color: COLORS.white,
     marginBottom: SPACING.md,
+    paddingLeft: SPACING.md,
   },
   actionButton: {
     marginBottom: SPACING.md,
